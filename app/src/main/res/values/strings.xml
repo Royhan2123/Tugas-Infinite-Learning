@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Tugas-InfiniteLearning</string>
+
+
+    <string name="name1">Nasi</string>
+    <string name="name2">Pasta</string>
+    <string name="name3">Roti</string>
+    <string name="name4">Kentang</string>
+    <string name="name5">Daging sapi</string>
+    <string name="name6">Ayam</string>
+    <string name="name7">Ikan</string>
+    <string name="name8">Telur</string>
+    <string name="name9">Keju</string>
+    <string name="name10">Keripik kentang</string>
+
+
+    <string name="deskripsi1">Nasi adalah salah satu makanan pokok yang sangat umum dan penting di berbagai budaya di seluruh dunia. Dibuat dari biji-bijian tanaman padi yang telah dimasak, nasi memiliki tekstur yang lembut dan rasa yang netral, sehingga cocok untuk dijadikan dasar dalam banyak hidangan.</string>
+    <string name="deskripsi2">Pasta adalah hidangan yang terbuat dari adonan tepung terigu, air, dan telur (tergantung pada jenisnya) yang dibentuk menjadi berbagai bentuk seperti spaghetti, penne, fusilli, dan lainnya. </string>
+    <string name="deskripsi3">Roti adalah makanan dasar yang terbuat dari adonan tepung terigu, air, ragi, garam, dan kadang-kadang lemak atau gula</string>
+    <string name="deskripsi4">Kentang adalah sayuran umbi yang biasanya dimakan setelah dimasak. Kentang dapat direbus, dipanggang, digoreng, atau diolah menjadi berbagai hidangan, seperti kentang tumbuk, kentang goreng, atau kentang panggang.</string>
+    <string name="deskripsi5">Daging sapi adalah daging yang berasal dari sapi. Daging sapi biasanya memiliki tekstur yang padat dan kaya akan protein. Ini adalah bahan utama dalam banyak hidangan, seperti steak, burger, sop, atau rendang.</string>
+    <string name="deskripsi6">Ayam adalah salah satu jenis daging unggas yang paling umum dikonsumsi. Daging ayam memiliki tekstur yang lembut dan rasa yang netral, sehingga cocok untuk berbagai macam hidangan, mulai dari panggang, goreng, hingga sup.</string>
+    <string name="deskripsi7">Ikan adalah sumber protein yang kaya nutrisi. Ikan memiliki berbagai tekstur dan rasa tergantung pada jenisnya. Ikan dapat dimasak dengan berbagai cara, seperti dipanggang, direbus, digoreng, atau dibakar.</string>
+    <string name="deskripsi8">Telur adalah sumber protein hewani yang kaya nutrisi. Telur dapat dimasak dengan berbagai cara, seperti direbus, digoreng, diaduk, atau dipanggang.</string>
+    <string name="deskripsi9">Keju adalah produk olahan dari susu yang difermentasi dan mengalami proses pematangan. Keju memiliki berbagai macam rasa, aroma, dan tekstur tergantung pada jenisnya.</string>
+    <string name="deskripsi10">Keripik kentang adalah makanan ringan yang terbuat dari irisan tipis kentang yang digoreng atau dipanggang hingga renyah. </string>
+
+
+</resources>
