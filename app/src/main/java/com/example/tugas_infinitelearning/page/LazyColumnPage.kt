@@ -50,7 +50,7 @@ fun LazyColumnPage(navController: NavController) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(
-                    vertical = 60.dp,
+                    vertical = 50.dp,
                     horizontal = 20.dp
                 ),
         ) {

@@ -1,9 +1,11 @@
 package com.example.tugas_infinitelearning.page
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -25,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.tugas_infinitelearning.component.CardFood
 import com.example.tugas_infinitelearning.model.NameFood
 import com.example.tugas_infinitelearning.model.loadFood
+import com.example.tugas_infinitelearning.navigation.NavigationScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -50,27 +53,30 @@ fun LazyRowPage(navController: NavController) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(vertical = 60.dp, horizontal = 10.dp)
+                .padding(
+                    vertical = 50.dp,
+                    horizontal = 20.dp
+                )
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.Start
         ) {
-            ListFoodRow(nameFoodList = loadFood())
-            ListFoodRow(nameFoodList = loadFood())
-            ListFoodRow(nameFoodList = loadFood())
+            ListFoodRow(nameFoodList = loadFood(), navController)
+            ListFoodRow(nameFoodList = loadFood(), navController)
+            ListFoodRow(nameFoodList = loadFood(), navController)
         }
     }
 }
 
 @Composable
-fun ListFoodRow(nameFoodList: List<NameFood>, modifier: Modifier = Modifier) {
-    LazyRow(
-        modifier = modifier
-    ) {
-        items(nameFoodList) { nameFoodList ->
-            CardFood(
-                nameFood = nameFoodList,
-                modifier = Modifier.padding(15.dp)
-            )
+fun ListFoodRow(nameFoodList: List<NameFood>, navController: NavController) {
+    LazyRow {
+        items(nameFoodList) { nameFood ->
+            CardFood(nameFood = nameFood, modifier = Modifier
+                .clickable {
+                    navController.navigate(
+                        route = "${NavigationScreen.Detailpage.name}/${nameFood.nama}"
+                    )
+                })
         }
     }
 }

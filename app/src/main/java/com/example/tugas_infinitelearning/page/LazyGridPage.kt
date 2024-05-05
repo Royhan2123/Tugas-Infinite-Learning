@@ -1,10 +1,14 @@
 package com.example.tugas_infinitelearning.page
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -21,6 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.tugas_infinitelearning.component.CardFood
 import com.example.tugas_infinitelearning.model.NameFood
 import com.example.tugas_infinitelearning.model.loadFood
+import com.example.tugas_infinitelearning.navigation.NavigationScreen
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,24 +49,34 @@ fun LazyGridPage(navController: NavController) {
             )
         }
     ) {
-        ListFoodGrid(nameFoodList = loadFood())
+        Column (
+            modifier = Modifier.padding(
+                vertical = 50.dp,
+                horizontal = 20.dp
+            ),
+        ) {
+            ListFoodGrid(nameFoodList = loadFood(),navController)
+
+        }
+
     }
 }
 
 @Composable
 fun ListFoodGrid(
     nameFoodList: List<NameFood>,
-    modifier: Modifier = Modifier,
+    navController: NavController
 ) {
     LazyVerticalGrid(
-        modifier = modifier,
         columns = GridCells.Fixed(2)
     ) {
         items(nameFoodList) { nameFood ->
-            CardFood(
-                nameFood = nameFood,
-                modifier = Modifier.padding(15.dp)
-            )
+            CardFood(nameFood = nameFood, modifier = Modifier
+                .clickable {
+                    navController.navigate(
+                        route = "${NavigationScreen.Detailpage.name}/${nameFood.nama}"
+                    )
+                } )
         }
     }
 }

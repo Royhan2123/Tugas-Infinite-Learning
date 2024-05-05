@@ -31,6 +31,7 @@ fun CardFood(
     Card(
         modifier = modifier.height(225.dp)
             .fillMaxWidth()
+            .padding(10.dp)
     ) {
         Column {
             Image(
