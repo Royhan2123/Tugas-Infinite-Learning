@@ -51,7 +51,6 @@ fun AccountPage(navController: NavController) {
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.Gray,
                 )
-
             )
         }
     ) {
