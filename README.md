@@ -9,3 +9,11 @@
 </ul>
 </br>
 <h3>Menerapkan Detail Page </h3>
+<ul>
+  <li>Memuat Data dari item yang di klik</li>
+</ul>
+</br>
+<h3>Menerapkan Account Pace</h3>
+<ul>
+  <li>Memuat Informasi dari Nama, Image, Email, Asal Perguruan & Jurusan</li>
+</ul>
