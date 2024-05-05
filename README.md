@@ -1,5 +1,6 @@
 <h2>Tugas Infinite Learning</h2>
 
+<h3>Android Studio versi : Jelly Fish</h3>
 <h3>Menerapkan Bottom Navigation</h3>
 <ul>
   <li>Lazy Column Page </li>
