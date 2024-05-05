@@ -25,9 +25,8 @@ import com.example.tugas_infinitelearning.model.NameFood
 
 @Composable
 fun CardFood(
-    navController: NavController,
     nameFood: NameFood,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Card(
         modifier = modifier.height(225.dp)
@@ -57,7 +56,6 @@ fun CardFood(
 @Composable
 fun CardFoodPreview() {
     CardFood(
-        navController = rememberNavController(),
         nameFood = NameFood(
             R.string.name1,
             R.string.deskripsi1,

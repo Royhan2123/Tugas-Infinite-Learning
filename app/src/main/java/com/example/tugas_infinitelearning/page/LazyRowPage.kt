@@ -1,16 +1,20 @@
 package com.example.tugas_infinitelearning.page
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,17 +26,16 @@ import com.example.tugas_infinitelearning.component.CardFood
 import com.example.tugas_infinitelearning.model.NameFood
 import com.example.tugas_infinitelearning.model.loadFood
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun LazyGridPage(navController: NavController) {
+fun LazyRowPage(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     Text(
-                        text = "Lazy Grid Page",
+                        text = "Lazy Row Page",
                         fontSize = 14.sp,
                         color = Color.White,
                     )
@@ -44,22 +47,28 @@ fun LazyGridPage(navController: NavController) {
             )
         }
     ) {
-        ListFoodGrid(nameFoodList = loadFood())
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = 60.dp, horizontal = 10.dp)
+                .verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.Start
+        ) {
+            ListFoodRow(nameFoodList = loadFood())
+            ListFoodRow(nameFoodList = loadFood())
+            ListFoodRow(nameFoodList = loadFood())
+        }
     }
 }
 
 @Composable
-fun ListFoodGrid(
-    nameFoodList: List<NameFood>,
-    modifier: Modifier = Modifier,
-) {
-    LazyVerticalGrid(
-        modifier = modifier,
-        columns = GridCells.Fixed(2)
+fun ListFoodRow(nameFoodList: List<NameFood>, modifier: Modifier = Modifier) {
+    LazyRow(
+        modifier = modifier
     ) {
-        items(nameFoodList) { nameFood ->
+        items(nameFoodList) { nameFoodList ->
             CardFood(
-                nameFood = nameFood,
+                nameFood = nameFoodList,
                 modifier = Modifier.padding(15.dp)
             )
         }
@@ -69,6 +78,6 @@ fun ListFoodGrid(
 
 @Preview
 @Composable
-fun PreviewLazyGridPage() {
-    LazyGridPage(navController = rememberNavController())
+fun PreviewLazyRowPage() {
+    LazyRowPage(navController = rememberNavController())
 }

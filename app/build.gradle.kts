@@ -74,4 +74,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     //noinspection UseTomlInstead
     debugImplementation("androidx.compose.material:material-icons-extended")
+    //noinspection UseTomlInstead
+    implementation ("androidx.compose.foundation:foundation-layout:1.6.7")
+
 }
